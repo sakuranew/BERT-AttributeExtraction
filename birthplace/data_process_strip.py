@@ -1,10 +1,10 @@
-# os.chdir("./birthplace")
+# os.chdir("./data/birthplace")
 import random
 
 
 def data_gen(k):
     if k == 1:
-        f = open('./birth_place_train_strip.txt', 'r', encoding='utf-8')
+        f = open('./data/birth_place_train_strip.txt', 'r', encoding='utf-8')
         train_x = []
         train_y = []
         test_x = []
@@ -46,7 +46,7 @@ def data_gen(k):
 
         print('reading test data ...')
 
-        f = open('./birth_place_test_strip.txt', 'r', encoding='utf-8')
+        f = open('./data/birth_place_test_strip.txt', 'r', encoding='utf-8')
 
         while True:
             content = f.readline()
@@ -109,7 +109,7 @@ def data_gen(k):
         #     "百分比": "prt",
         #     "时间": "tim"
         # }
-        # with open('./person_name.txt', 'r', encoding='utf-8') as fin:
+        # with open('./data/person_name.txt', 'r', encoding='utf-8') as fin:
         #
         #     content = fin.readlines()
         #     for name in content:
@@ -117,7 +117,7 @@ def data_gen(k):
         #
         #         dic[name] = 1
         #
-        # f = open('./birth_place_train_strip.txt', 'r', encoding='utf-8')
+        # f = open('./data/birth_place_train_strip.txt', 'r', encoding='utf-8')
         # train_x = []
         # train_y = []
         # test_x = []
@@ -201,7 +201,7 @@ def data_gen(k):
         # # train_y=train_y
         # print('reading test data ...')
         #
-        # f = open('./birth_place_test_strip.txt', 'r', encoding='utf-8')
+        # f = open('./data/birth_place_test_strip.txt', 'r', encoding='utf-8')
         #
         # while True:
         #     content = f.readline()
@@ -274,7 +274,7 @@ def data_gen(k):
         #     test_x.append(s)
         #
         # return (train_x, test_x), (train_y, test_y)
-        f = open('./birth_place_train.txt', 'r', encoding='utf-8')
+        f = open('./data/birth_place_train.txt', 'r', encoding='utf-8')
         train_x = []
         train_y = []
         test_x = []
@@ -316,7 +316,7 @@ def data_gen(k):
 
         print('reading test data ...')
 
-        f = open('./birth_place_test.txt', 'r', encoding='utf-8')
+        f = open('./data/birth_place_test.txt', 'r', encoding='utf-8')
 
         while True:
             content = f.readline()
@@ -359,7 +359,7 @@ def data_gen(k):
         return (train_x, test_x), (train_y, test_y)
     elif k == 3:
         dic = dict()
-        with open('./person_name.txt', 'r', encoding='utf-8') as fin:
+        with open('./data/person_name.txt', 'r', encoding='utf-8') as fin:
 
             content = fin.readlines()
             for name in content:
@@ -367,7 +367,7 @@ def data_gen(k):
 
                 dic[name] = 1
 
-        f = open('./birth_place_train_strip.txt', 'r', encoding='utf-8')
+        f = open('./data/birth_place_train_strip.txt', 'r', encoding='utf-8')
         train_x = []
         train_y = []
         test_x = []
@@ -417,7 +417,7 @@ def data_gen(k):
 
         print('reading test data ...')
 
-        f = open('./birth_place_test_strip.txt', 'r', encoding='utf-8')
+        f = open('./data/birth_place_test_strip.txt', 'r', encoding='utf-8')
 
         while True:
             content = f.readline()
@@ -489,7 +489,7 @@ def data_gen(k):
             "百分比": "prt",
             "时间": "tim"
         }
-        with open('./person_name.txt', 'r', encoding='utf-8') as fin:
+        with open('./data/person_name.txt', 'r', encoding='utf-8') as fin:
 
             content = fin.readlines()
             for name in content:
@@ -497,7 +497,7 @@ def data_gen(k):
 
                 dic[name] = 1
 
-        f = open('./birth_place_train.txt', 'r', encoding='utf-8')
+        f = open('./data/birth_place_train.txt', 'r', encoding='utf-8')
         train_x = []
         train_y = []
         test_x = []
@@ -584,7 +584,7 @@ def data_gen(k):
         # train_y=train_y
         print('reading test data ...')
 
-        f = open('./birth_place_test.txt', 'r', encoding='utf-8')
+        f = open('./data/birth_place_test.txt', 'r', encoding='utf-8')
 
         while True:
             content = f.readline()
