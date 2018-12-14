@@ -23,7 +23,7 @@ for k in range(1, 4):
     #     else:
     #         predict[i]=1
 
-    with open("error_sentences" + str(k) + ".txt", "w", encoding='utf-8') as f:
+    with open("./result/error_sentences" + str(k) + ".txt", "w", encoding='utf-8') as f:
         fn = ""
         fp = ""
         for i in range(len(predict)):
@@ -42,7 +42,7 @@ for k in range(1, 4):
     target_names = ['0', '1']
     print(classification_report(label, predict, target_names=target_names, digits=3))
     print(confusion_matrix(label, predict))
-    with open("res" + str(k) + ".txt", "w", encoding='utf-8') as f:
+    with open("./result/res" + str(k) + ".txt", "w", encoding='utf-8') as f:
         f.write("task:" + str(k) + "\n")
         f.write(classification_report(label, predict, target_names=target_names, digits=3))
         f.write("\n")

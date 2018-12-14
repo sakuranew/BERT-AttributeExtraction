@@ -191,10 +191,10 @@ class MyProcessor(DataProcessor):
 
     def __init__(self, k):
         super().__init__()
-        import data_process
-        self.train, self.test = self._create_examples(data_process.data_gen, k)
-        # import data_process_strip
-        # self.train, self.test = self._create_examples(data_process_strip.data_gen, k)
+        # import data_process
+        # self.train, self.test = self._create_examples(data_process.data_gen, k)
+        import data_process_strip
+        self.train, self.test = self._create_examples(data_process_strip.data_gen, k)
 
     def get_train_examples(self, data_dir):
         """See base class."""

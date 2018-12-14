@@ -8,7 +8,7 @@ for k in range(1, 2):
     # continue
     (_, x), (_, label) = data_process.data_gen(k)
     label = np.array(label)
-    proba_filename = os.path.join('result', "test_results" + "_" + str(k) + ".tsv")
+    proba_filename = os.path.join('', "test_results" + "_" + str(k) + ".tsv")
     r = np.loadtxt(proba_filename, dtype=float, delimiter="\t")
     predict = np.argmax(r, axis=1)
     # for i in range(len(r)):
