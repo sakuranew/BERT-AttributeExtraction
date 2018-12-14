@@ -1,0 +1,12 @@
+--task_name=my \
+--do_train=true \
+--do_predict=true \
+--data_dir=a \
+--vocab_file=/home/tiny/zhaomeng/bertmodel/vocab.txt \
+--bert_config_file=/home/tiny/zhaomeng/bertmodel/bert_config.json \
+--init_checkpoint=/home/tiny/zhaomeng/bertmodel/bert_model.ckpt \
+--max_seq_length=80 \
+--train_batch_size=32 \
+--learning_rate=2e-5 \
+--num_train_epochs=1.0 \
+--output_dir=./output

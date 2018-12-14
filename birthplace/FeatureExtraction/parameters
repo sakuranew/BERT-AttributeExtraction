@@ -1,0 +1,35 @@
+--input_file=../data/birth_place_train_strip.txt \
+--output_file=../data/birth_place_train_strip.jsonl \
+--vocab_file=/home/tiny/zhaomeng/bertmodel/vocab.txt \
+--bert_config_file=/home/tiny/zhaomeng/bertmodel/bert_config.json \
+--init_checkpoint=/home/tiny/zhaomeng/bertmodel/bert_model.ckpt \
+--layers=-1 \
+--max_seq_length=80 \
+--batch_size=16
+
+--input_file=../data/birth_place_test_strip.txt \
+--output_file=../data/birth_place_test_strip.jsonl \
+--vocab_file=/home/tiny/zhaomeng/bertmodel/vocab.txt \
+--bert_config_file=/home/tiny/zhaomeng/bertmodel/bert_config.json \
+--init_checkpoint=/home/tiny/zhaomeng/bertmodel/bert_model.ckpt \
+--layers=-1 \
+--max_seq_length=80 \
+--batch_size=16
+
+--input_file=../data/birth_place_train.txt \
+--output_file=../data/birth_place_train.jsonl \
+--vocab_file=/home/tiny/zhaomeng/bertmodel/vocab.txt \
+--bert_config_file=/home/tiny/zhaomeng/bertmodel/bert_config.json \
+--init_checkpoint=/home/tiny/zhaomeng/bertmodel/bert_model.ckpt \
+--layers=-1 \
+--max_seq_length=80 \
+--batch_size=16
+
+--input_file=../data/birth_place_test.txt \
+--output_file=../data/birth_place_test.jsonl \
+--vocab_file=/home/tiny/zhaomeng/bertmodel/vocab.txt \
+--bert_config_file=/home/tiny/zhaomeng/bertmodel/bert_config.json \
+--init_checkpoint=/home/tiny/zhaomeng/bertmodel/bert_model.ckpt \
+--layers=-1 \
+--max_seq_length=80 \
+--batch_size=16

@@ -1,6 +1,6 @@
 import pickle
 
-f = open('./data/birth_place_train.txt', 'r', encoding='utf-8')
+f = open('../data/birth_place_train.txt', 'r', encoding='utf-8')
 train_x = []
 train_y = []
 test_x = []
@@ -74,7 +74,7 @@ while True:
 
 print('reading test data ...')
 
-f = open('./data/birth_place_test.txt', 'r', encoding='utf-8')
+f = open('../data/birth_place_test.txt', 'r', encoding='utf-8')
 
 while True:
     content = f.readline()
@@ -142,14 +142,14 @@ while True:
 print(train_x[0])
 
 
-with open('./data/birth_place_trainy.pickle', 'wb') as f:
+with open('../data/birth_place_trainy.pickle', 'wb') as f:
     pickle.dump(train_y, f)
 
-with open('./data/birth_place_testy.pickle', 'wb') as f:
+with open('../data/birth_place_testy.pickle', 'wb') as f:
     pickle.dump(test_y, f)
 
 
-# with open('./data/pos_trainx.pickle', 'wb') as f:
+# with open('../data/pos_trainx.pickle', 'wb') as f:
 #     pickle.dump(train_pos_x, f)
-# with open('./data/pos_testx.pickle', 'wb') as f:
+# with open('../data/pos_testx.pickle', 'wb') as f:
 #     pickle.dump(test_pos_x, f)
