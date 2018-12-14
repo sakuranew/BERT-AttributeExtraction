@@ -8,7 +8,7 @@ p = 16
 dim = 768
 max_len = 100
 sep = 8727
-test = 967
+test = 962
 with open('./data/pos_trainx.pickle', 'rb') as f:
     train_pos_x = pickle.load(f)
 with open('./data/pos_testx.pickle', 'rb') as f:

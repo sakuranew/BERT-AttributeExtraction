@@ -4,7 +4,7 @@ import json
 dim = 768
 max_len = 128
 sep = 8727
-test = 967
+test = 962
 # with open("./data/birth_place_x.jsonl", "r", encoding='utf-8') as f:
 with open("../output.jsonl", "r", encoding='utf-8') as f:
     vec = np.empty([sep + test, dim])
