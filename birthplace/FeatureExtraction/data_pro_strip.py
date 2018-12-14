@@ -1,6 +1,6 @@
 import pickle
 
-f = open('./data/birth_place_train.txt', 'r', encoding='utf-8')
+f = open('./data/birth_place_train_strip.txt', 'r', encoding='utf-8')
 train_x = []
 train_y = []
 test_x = []
@@ -74,7 +74,7 @@ while True:
 
 print('reading test data ...')
 
-f = open('./data/birth_place_test.txt', 'r', encoding='utf-8')
+f = open('./data/birth_place_test_strip.txt', 'r', encoding='utf-8')
 
 while True:
     content = f.readline()
@@ -141,34 +141,15 @@ while True:
     test_x.append(s)
 print(train_x[0])
 
-# train_x=train_x[:sep]
-# test_x=test_x
-# train_y=train_y[:sep]
-# test_y=test_y
-all_x = []
-for target_list in train_x:
-    all_x.append(target_list)
-for target_list in test_x:
-    all_x.append(target_list)
-# with open('./data/birth_place_trainx.txt','w',encoding='utf-8') as f:
-#     for target_list in train_x:
-#         f.write(target_list)
-#         f.write('\n')
 
-with open('./data/birth_place_trainy.pickle', 'wb') as f:
+with open('./data/birth_place_trainy_strip.pickle', 'wb') as f:
     pickle.dump(train_y, f)
-# with open('./data/birth_place_testx.txt','w',encoding='utf-8') as f:
-#     for target_list in test_x:
-#         f.write(target_list)
-#         f.write('\n')
-with open('./data/birth_place_testy.pickle', 'wb') as f:
-    pickle.dump(test_y, f)
-with open('./data/birth_place_x.txt', 'w', encoding='utf-8') as f:
-    for target_list in all_x:
-        f.write(target_list)
-        f.write('\n')
 
-with open('./data/pos_trainx.pickle', 'wb') as f:
-    pickle.dump(train_pos_x, f)
-with open('./data/pos_testx.pickle', 'wb') as f:
-    pickle.dump(test_pos_x, f)
+with open('./data/birth_place_testy_strip.pickle', 'wb') as f:
+    pickle.dump(test_y, f)
+
+
+# with open('./data/pos_trainx.pickle', 'wb') as f:
+#     pickle.dump(train_pos_x, f)
+# with open('./data/pos_testx.pickle', 'wb') as f:
+#     pickle.dump(test_pos_x, f)
