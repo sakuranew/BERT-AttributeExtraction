@@ -3,7 +3,7 @@ import numpy as np
 from sklearn.metrics import classification_report, confusion_matrix
 import data_process_strip
 
-for k in range(1, 4):
+for k in range(1, 3):
     # if k==2:
     # continue
     (_, x), (_, label) = data_process_strip.data_gen(k)

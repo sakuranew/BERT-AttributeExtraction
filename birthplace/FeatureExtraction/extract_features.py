@@ -22,6 +22,9 @@ import codecs
 import collections
 import json
 import re
+import sys
+# sys.path.append("/home/tiny/zhaomeng/KGAttributesExtraction")
+# print(sys.path)
 
 from raw_bert import modeling
 from raw_bert import tokenization
@@ -139,7 +142,7 @@ def input_fn_builder(features, seq_length):
                     dtype=tf.int32),
         })
 
-        d = d.batch(batch_size=batch_size, drop_remainder=False)
+        d = d.batch(batch_size=batch_size)
         return d
 
     return input_fn

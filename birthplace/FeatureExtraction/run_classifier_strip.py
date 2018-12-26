@@ -42,11 +42,11 @@ y_test=np.array(y_test)
 # X_train=np.concatenate((train0,train1),axis=0)
 # y_train=np.concatenate((test0,test1),axis=0)
 
-X_train=preprocessing.normalize(X_train, norm='l2')
-X_test=preprocessing.normalize(X_test, norm='l2')
+# X_train=preprocessing.normalize(X_train, norm='l2')
+# X_test=preprocessing.normalize(X_test, norm='l2')
 
-X_train = StandardScaler().fit_transform(X_train)
-X_test = StandardScaler().fit_transform(X_test)
+# X_train = StandardScaler().fit_transform(X_train)
+# X_test = StandardScaler().fit_transform(X_test)
 print(X_train.shape)
 print(y_train.shape)
 
@@ -62,9 +62,14 @@ print(y_train.shape)
 # GaussianProcess=GaussianProcessClassifier(1.0 * RBF(1.0))
 # DecisionTree=DecisionTreeClassifier(max_depth=5)
 # RandomForest=RandomForestClassifier(max_depth=5, n_estimators=10, max_features=1)
+MLP=MLPClassifier(hidden_layer_sizes=(100))
 
-MLP=MLPClassifier(activation="logistic",random_state=2)
-MLP1=MLPClassifier(alpha=1,activation="logistic",random_state=2)
+MLP1=MLPClassifier(activation="logistic")
+MLP2=MLPClassifier(alpha=0.01,activation="logistic")
+
+
+# MLP=MLPClassifier(activation="logistic",random_state=2)
+# MLP1=MLPClassifier(alpha=1,activation="logistic",random_state=2)
 #
 # AdaBoost=AdaBoostClassifier()
 # Gaussian=GaussianNB()
@@ -81,6 +86,7 @@ fun_list=[
     # ("RandomForest",RandomForest),
     ("MLP",MLP),
     ("MLP1",MLP1),
+    ("MLP2", MLP2),
 
     # ("AdaBoost",AdaBoost),
     # ("Naive Bayes",Gaussian),

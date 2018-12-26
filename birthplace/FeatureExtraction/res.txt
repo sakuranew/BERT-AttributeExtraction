@@ -1,0 +1,26 @@
+MLP accuracy is 0.9272349272349273
+             precision    recall  f1-score   support
+
+          0      0.899     0.990     0.942       573
+          1      0.982     0.835     0.903       389
+
+avg / total      0.932     0.927     0.926       962
+
+MLP1 accuracy is 0.9438669438669439
+             precision    recall  f1-score   support
+
+          0      0.944     0.963     0.953       573
+          1      0.944     0.915     0.930       389
+
+avg / total      0.944     0.944     0.944       962
+
+MLP2 accuracy is 0.9397089397089398
+             precision    recall  f1-score   support
+
+          0      0.957     0.941     0.949       573
+          1      0.915     0.938     0.926       389
+
+avg / total      0.940     0.940     0.940       962
+
+
+Process finished with exit code 0

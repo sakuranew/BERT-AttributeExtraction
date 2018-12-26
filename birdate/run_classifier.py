@@ -17,15 +17,13 @@
 from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
-import sys
 
-sys.path.append("/home/tiny/zhaomeng/bert-masterlinux")
 import collections
 import csv
 import os
-import modeling
-import optimization
-import tokenization
+from raw_bert import modeling
+from raw_bert import optimization
+from raw_bert import tokenization
 import tensorflow as tf
 
 flags = tf.flags
@@ -195,6 +193,8 @@ class MyProcessor(DataProcessor):
         super().__init__()
         import data_process
         self.train, self.test = self._create_examples(data_process.data_gen, k)
+        # import data_process_strip
+        # self.train, self.test = self._create_examples(data_process_strip.data_gen, k)
 
     def get_train_examples(self, data_dir):
         """See base class."""
@@ -240,45 +240,45 @@ class MyProcessor(DataProcessor):
         return examples_train, examples_test
 
 
-class ColaProcessor(DataProcessor):
-    """Processor for the CoLA data set (GLUE version)."""
-
-    def get_train_examples(self, data_dir):
-        """See base class."""
-        return self._create_examples(
-            self._read_tsv(os.path.join(data_dir, "train.tsv")), "train")
-
-    def get_dev_examples(self, data_dir):
-        """See base class."""
-        return self._create_examples(
-            self._read_tsv(os.path.join(data_dir, "dev.tsv")), "dev")
-
-    def get_test_examples(self, data_dir):
-        """See base class."""
-        return self._create_examples(
-            self._read_tsv(os.path.join(data_dir, "test.tsv")), "test")
-
-    def get_labels(self):
-        """See base class."""
-        return ["0", "1"]
-
-    def _create_examples(self, lines, set_type):
-        """Creates examples for the training and dev sets."""
-        examples = []
-        for (i, line) in enumerate(lines):
-            # Only the test set has a header
-            if set_type == "test" and i == 0:
-                continue
-            guid = "%s-%s" % (set_type, i)
-            if set_type == "test":
-                text_a = tokenization.convert_to_unicode(line[1])
-                label = "0"
-            else:
-                text_a = tokenization.convert_to_unicode(line[3])
-                label = tokenization.convert_to_unicode(line[1])
-            examples.append(
-                InputExample(guid=guid, text_a=text_a, text_b=None, label=label))
-        return examples
+# class ColaProcessor(DataProcessor):
+#     """Processor for the CoLA data set (GLUE version)."""
+#
+#     def get_train_examples(self, data_dir):
+#         """See base class."""
+#         return self._create_examples(
+#             self._read_tsv(os.path.join(data_dir, "train.tsv")), "train")
+#
+#     def get_dev_examples(self, data_dir):
+#         """See base class."""
+#         return self._create_examples(
+#             self._read_tsv(os.path.join(data_dir, "dev.tsv")), "dev")
+#
+#     def get_test_examples(self, data_dir):
+#         """See base class."""
+#         return self._create_examples(
+#             self._read_tsv(os.path.join(data_dir, "test.tsv")), "test")
+#
+#     def get_labels(self):
+#         """See base class."""
+#         return ["0", "1"]
+#
+#     def _create_examples(self, lines, set_type):
+#         """Creates examples for the training and dev sets."""
+#         examples = []
+#         for (i, line) in enumerate(lines):
+#             # Only the test set has a header
+#             if set_type == "test" and i == 0:
+#                 continue
+#             guid = "%s-%s" % (set_type, i)
+#             if set_type == "test":
+#                 text_a = tokenization.convert_to_unicode(line[1])
+#                 label = "0"
+#             else:
+#                 text_a = tokenization.convert_to_unicode(line[3])
+#                 label = tokenization.convert_to_unicode(line[1])
+#             examples.append(
+#                 InputExample(guid=guid, text_a=text_a, text_b=None, label=label))
+#         return examples
 
 
 def convert_single_example(ex_index, example, label_list, max_seq_length,
@@ -665,7 +665,9 @@ def convert_examples_to_features(examples, label_list, max_seq_length,
 
 
 def main(_):
-    for k in range(1, 5):
+    for k in range(1, 3):
+        # if k == 2:
+        # continue
         import shutil
         # os.chdir('/home/tianyijun/zm/fer2013')
 
@@ -832,6 +834,10 @@ def main(_):
                     output_line = "\t".join(
                         str(class_probability) for class_probability in prediction) + "\n"
                     writer.write(output_line)
+
+        if os.path.isdir(FLAGS.output_dir):
+            shutil.rmtree(FLAGS.output_dir)
+            os.mkdir(FLAGS.output_dir)
 
 
 if __name__ == "__main__":

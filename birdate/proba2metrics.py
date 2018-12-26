@@ -3,12 +3,26 @@ import numpy as np
 from sklearn.metrics import classification_report, confusion_matrix
 import data_process
 
-for k in range(1, 5):
+for k in range(1, 3):
+    # if k==2:
+    # continue
     (_, x), (_, label) = data_process.data_gen(k)
     label = np.array(label)
-    proba_filename = os.path.join('result', "test_results" + "_" + str(k) + ".tsv")
+    proba_filename = os.path.join('', "test_results" + "_" + str(k) + ".tsv")
     r = np.loadtxt(proba_filename, dtype=float, delimiter="\t")
     predict = np.argmax(r, axis=1)
+    # for i in range(len(r)):
+    #     if r[i][1]>r[i][0]:
+    #         if r[i][1]>0.9:
+    #             predict[i]=1
+    #         else:
+    #             predict[i]=0
+    # if r[i][1]<r[i][0]:
+    #     if r[i][0]>0.9:
+    #         predict[i]=0
+    #     else:
+    #         predict[i]=1
+
     with open("./result/error_sentences" + str(k) + ".txt", "w", encoding='utf-8') as f:
         fn = ""
         fp = ""

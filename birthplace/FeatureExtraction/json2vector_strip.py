@@ -2,14 +2,15 @@ import numpy as np
 import json
 def json2vector(filename):
     dim = 768
-    max_len = 128
-    sep = 8727
-    test = 962
-    with open(filename, "r", encoding='utf-8') as f:
-        vec = np.empty([sep + test, dim])
-        vec2 = np.empty([sep + test, dim])
 
-        for line_index in range(sep + test):
+    max_len = 8727 if filename.find("train") is not -1 else 962
+
+
+    with open(filename, "r", encoding='utf-8') as f:
+        vec = np.empty([max_len, dim])
+        # vec2 = np.empty([sep + test, dim])
+
+        for line_index in range(max_len):
             bb = json.loads(f.readline())
             # line=bb[line_index]["features"]
             line = bb["features"]
@@ -24,14 +25,17 @@ def json2vector(filename):
             # tokens_vec2 = np.array(tokens_vec2)
             # sen_vec2 = np.sum(tokens_vec2, axis=0) / tokens_vec2.shape[0]
             # vec2[line_index] = sen_vec2
-
-        np.save('../data/birth_place_trainx_strip.npy', vec[:sep])
-        np.save('../data/birth_place_testx_strip.npy', vec[sep:])
+        if filename.find("train") is not -1:
+            np.save('../data/birth_place_trainx_strip.npy', vec)
+        else:
+            np.save('../data/birth_place_testx_strip.npy', vec)
 
         # np.save('../data/birth_place_trainx2.npy', vec2[:sep])
         # np.save('../data/birth_place_testx2.npy', vec2[sep:])
 
 if __name__ == "__main__":
-    file_list=["../data/birth_place_train_strip.jsonl","../data/birth_place_test_strip.jsonl"]
+    # file_list=["../data/birth_place_test_strip.jsonl"]
+    file_list=["../data/birth_place_train_strip.jsonl"]
+
     for f in file_list:
         json2vector(f)
