@@ -1,7 +1,7 @@
 
-# KGAttributesExtraction
-##  知识图谱属性抽取
-USING BERT FOR AttributesExtraction in KnowledgeGraph with two method,fine-tuning and feature extraction.
+# BERT-Attribute-Extraction
+##  基于bert的知识图谱属性抽取
+USING BERT FOR Attribute Extraction in KnowledgeGraph with two method,fine-tuning and feature extraction.
  
 知识图谱百度百科人物词条属性抽取，使用基于bert的微调fine-tuning和特征提取feature-extraction方法进行实验。
 
