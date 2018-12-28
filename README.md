@@ -30,9 +30,10 @@ Entities and attributes are  obtained from name entity recognition.
 
 Labels are  obtained from the  Baidu Encyclopedia infobox, and most of them are labeled manually,so some are not very good.  
 For example:
-            
-    吕仁礼#安徽省#1#吕仁礼（1916.2—2011.4）安徽省六安市人。一九三一年参加中国工农红军，
-    董浩#北京#0#16年1月7日，董浩在微博发文宣布退休。董浩就读于北师大附小、北京三中、首都师范大学。5岁开始学画。
+    
+    黄维#1904年#1#黄维（1904年-1989年），字悟我，出生于江西贵溪一农户家庭。        
+    陈昂#山东省滕州市#1#邀请担任诗词嘉宾。1992年1月26日，陈昂出生于山东省滕州市一个普通的知识分子家庭，其祖父、父亲都
+    陈伟庆#肇庆市鼎湖区#0#长。任免信息2016年10月21日下午，肇庆市鼎湖区八届人大一次会议胜利闭幕。陈伟庆当选区人民政府副区长。
 ## Getting Started
 
 * run `strip.py` can get striped data
@@ -78,7 +79,14 @@ For example with birthplace dataset：
     * then run `json2vector.py` to transfer json file to vector representation
     * finally run `run_classifier.py` to use machine learning methods to do classification,MLP usually peforms best 
 
+## Result
+The predicted results and misclassified corpus are saved in result dir.
+* For example with birthplace dataset using fine-tuning method,the result is:    
 
+                  precision    recall  f1-score   support
+
+           0      0.963     0.967     0.965       573
+           1      0.951     0.946     0.948       389
 ## Authors
 
 * **zhao meng** 
