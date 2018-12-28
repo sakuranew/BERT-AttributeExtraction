@@ -18,14 +18,26 @@ scikit-learn
     Chinese Simplified and Traditional, 12-layer, 768-hidden, 12-heads, 110M
     parameters
     
+### Installing
+
+None
+## Dataset
+
+The data set is constructed according to Baidu Encyclopedia character entries.
+Filter out corpus that does not contain entities and attributes.
+
+Entities and attributes are  obtained from name entity recognition.
+
+Labels are  obtained from the   Baidu Encyclopedia infobox.  
+For example:
+            
+    吕仁礼#安徽省#1#吕仁礼（1916.2—2011.4）安徽省六安市人。一九三一年参加中国工农红军，
+    董浩#北京#0#16年1月7日，董浩在微博发文宣布退休。董浩就读于北师大附小、北京三中、首都师范大学。5岁开始学画。
 ## Getting Started
 
 * run `strip.py` can get striped data
 * run `data_process.py` can process data to get numpy file input
 * `parameters` file is the parameters that run model need
-### Installing
-
-None
 
 ## Running the tests
 
