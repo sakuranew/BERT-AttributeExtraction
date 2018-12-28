@@ -28,7 +28,7 @@ Filter out corpus that does not contain entities and attributes.
 
 Entities and attributes are  obtained from name entity recognition.
 
-Labels are  obtained from the   Baidu Encyclopedia infobox.  
+Labels are  obtained from the  Baidu Encyclopedia infobox, and most of them are labeled manually,so some are not very good.  
 For example:
             
     吕仁礼#安徽省#1#吕仁礼（1916.2—2011.4）安徽省六安市人。一九三一年参加中国工农红军，
