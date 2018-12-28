@@ -23,7 +23,7 @@ scikit-learn
 None
 ## Dataset
 
-The data set is constructed according to Baidu Encyclopedia character entries.
+The dataset is constructed according to Baidu Encyclopedia character entries.
 Filter out corpus that does not contain entities and attributes.
 
 Entities and attributes are  obtained from name entity recognition.
