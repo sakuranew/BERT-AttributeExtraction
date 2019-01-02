@@ -665,7 +665,7 @@ def convert_examples_to_features(examples, label_list, max_seq_length,
 
 
 def main(_):
-    for k in range(1, 2):
+    for k in range(1 , 2):
         # if k == 2:
         # continue
         import shutil
