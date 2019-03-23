@@ -1,4 +1,5 @@
 .idea/
+data/
 *.jsonl
 *.npy
 *.pickle
@@ -118,3 +119,18 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+birdate/result/1e_1/
+birdate/result/3e_1/
+birdate/result/error_sentences1.txt
+birdate/result/error_sentences2.txt
+birdate/result/res1.txt
+birdate/result/res2.txt
+birthplace/FeatureExtraction/data_pro_8bs.py
+birthplace/FeatureExtraction/res_strip.txt
+birthplace/FeatureExtraction/run_classifier8.py
+birthplace/result/10e/
+birthplace/result/1e_1/
+birthplace/result/3e_2/
+birthplace/result/3e_3/
+birthplace/result/5e_1/
+birthplace/result/5e_2/
